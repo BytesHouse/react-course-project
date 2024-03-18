@@ -1,17 +1,10 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {useGetTasksMutation} from "../../features/auth/authApiSlice";
+import {useData} from "../../pages/TaskListPage/hooks/useData";
 
-const people = [
-    {
-        name: 'Title',
-        email: 'key',
-        role: 'Description',
-        lastSeen: 'time',
-        lastSeenDateTime: '2023-01-23T13:23Z',
-    },
-]
 export default function TasksLists() {
-    const [tasks, setTasks] = useState<any>();
+    const {setTasks, tasks} = useData();
+
     const [getTasks, {isLoading}] = useGetTasksMutation();
     useEffect(() => {
         const fetchData = async () => {

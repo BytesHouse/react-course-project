@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {logOut} from "../../features/auth/authSlice";
 import TasksLists from "../../components/TasksList/TasksLists";
+import Pagination from "../../components/Pagination/Pagination";
 
 const navigationItems = [
     {name: 'Dashboard', href: '#', current: true},
@@ -139,6 +140,9 @@ export default function TaskListPage() {
                         <TasksLists/>
                     </div>
                 </main>
+                <footer>
+                    <Pagination/>
+                </footer>
             </div>
         </>
     )
